@@ -15,12 +15,15 @@ export default class Mushroom extends Phaser.Sprite {
     this.body.velocity.y = -250; 
   }
   update () {
+    this.angle = 0;
     this.body.velocity.x = 0;
     if(this.cursors.left.isDown){
       this.body.velocity.x = -200;
+      this.angle = -20;
     }
     if(this.cursors.right.isDown){
       this.body.velocity.x = 200;
+      this.angle = 20;
     }
     if(this.cursors.down.isDown){
       this.body.velocity.y = +40;
