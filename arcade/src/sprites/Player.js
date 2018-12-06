@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 
-export default class Mushroom extends Phaser.Sprite {
-  constructor ({game, x, y, asset}) {
+export default class extends Phaser.Sprite {
+  constructor ({ game, x, y, asset }) {
     super(game, x, y, asset)
     this.anchor.setTo(0.5)
 
@@ -10,6 +10,7 @@ export default class Mushroom extends Phaser.Sprite {
     this.cursors = game.input.keyboard.createCursorKeys();
     this.cursors.up.onDown.add(()=> this.jump());
   }
+
 
   jump(){
     this.body.velocity.y = -250; 
