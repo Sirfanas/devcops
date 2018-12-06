@@ -25,7 +25,7 @@ export default class extends Phaser.State {
       game: this.game,
       x: this.world.centerX,
       y: this.world.centerY,
-      asset: 'vipi1'
+      asset: 'vipi'
     })
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);

@@ -6,20 +6,16 @@ export default class extends Phaser.Sprite {
 
     this.anchor.setTo(0.5)
 
-    this.animations.add(
-      'fly',
-      ['vipi1', 'vipi2'],
-      60,
-      true,
-    );
-
-    this.animations.play('fly');
-
     game.physics.arcade.enable(this)
     
     this.cursors = game.input.keyboard.createCursorKeys();
     this.cursors.up.onDown.add(()=> this.jump());
     this.energy = 100;
+
+    this.animations.add('plane', [1]);
+    this.animations.add('fly', [1, 2]);
+    this.animations.play('fly', 8, true);
+    this.scale.set(0.5);
   }
 
 
@@ -27,6 +23,7 @@ export default class extends Phaser.Sprite {
     this.body.velocity.y = -250;
     this.energy -= 10;
   }
+
   update () {
     this.body.velocity.x = 0;
     if(this.cursors.left.isDown){
@@ -36,7 +33,10 @@ export default class extends Phaser.Sprite {
       this.body.velocity.x = 200;
     }
     if(this.cursors.down.isDown){
+      this.animations.play('plane');
       this.body.velocity.y = +40;
+    } else {
+      this.animations.play('fly');
     }
   }
 }
