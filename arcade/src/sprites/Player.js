@@ -9,11 +9,13 @@ export default class extends Phaser.Sprite {
     
     this.cursors = game.input.keyboard.createCursorKeys();
     this.cursors.up.onDown.add(()=> this.jump());
+    this.energy = 100;
   }
 
 
   jump(){
-    this.body.velocity.y = -250; 
+    this.body.velocity.y = -250;
+    this.energy -= 10;
   }
   update () {
     this.body.velocity.x = 0;
