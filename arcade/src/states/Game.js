@@ -26,11 +26,7 @@ export default class extends Phaser.State {
     })
 
     this.game.add.existing(this.mushroom)
-    this.game.physics.startSystem(Phaser.Physics.ARCADE);
-    this.game.physics.arcade.gravity.y =200;
   }
-
-  
 
   render() {
     if (__DEV__) {
