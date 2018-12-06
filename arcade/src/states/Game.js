@@ -1,13 +1,16 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
-import Mushroom from '../sprites/Mushroom'
+import Player from '../sprites/Player'
 import lang from '../lang'
 
 export default class extends Phaser.State {
   init() { }
-  preload() { }
+  preload() { 
+  }
 
   create() {
+    this.anims = new Phaser.AnimationManager(this);
+
     const bannerText = lang.text('welcome')
     let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText, {
       font: '40px Bangers',
@@ -18,17 +21,17 @@ export default class extends Phaser.State {
     banner.padding.set(10, 16)
     banner.anchor.setTo(0.5)
 
-    this.mushroom = new Mushroom({
+    this.player = new Player({
       game: this.game,
       x: this.world.centerX,
       y: this.world.centerY,
-      asset: 'mushroom'
+      asset: 'vipi1'
     })
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 200;
 
-    this.game.add.existing(this.mushroom)
+    this.game.add.existing(this.player);
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y=200;

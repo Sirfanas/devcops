@@ -1,9 +1,19 @@
 import Phaser from 'phaser'
 
 export default class extends Phaser.Sprite {
-  constructor ({ game, x, y, asset }) {
+  constructor ({ game, x, y, asset}) {
     super(game, x, y, asset)
+
     this.anchor.setTo(0.5)
+
+    this.animations.add(
+      'fly',
+      ['vipi1', 'vipi2'],
+      60,
+      true,
+    );
+
+    this.animations.play('fly');
 
     game.physics.arcade.enable(this)
     
