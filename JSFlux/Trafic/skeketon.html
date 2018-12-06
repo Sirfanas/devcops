@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
 
   <title>NDLI</title>
-  <meta name="description" content="Nuit De L'info">
+  <meta name="description"
+        content="Nuit De L'info">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <link rel="stylesheet"
+        href="css/main.css">
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+          integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+          crossorigin=""></script>
 
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
+  <h1 id="testId">Open Street Map with <b>leaflet.js</b></h1>
+  <div id="mapid"></div>
+  <script src="js/main.js"></script>
+  <!--
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+          integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+          crossorigin=""></script> -->
 </body>
+
 </html>
