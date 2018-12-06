@@ -1,0 +1,70 @@
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+
+.custom-file-control:lang(en)::after {
+    content: "Selecione";
+}
+
+.custom-file-control:lang(en)::before {
+    content: "≫";
+}
+
+.custom-file-control {
+    text-align: left;
+}
+
+select, input {
+    background-color: #D6E6F4;
+    border: 0;
+}
+
+table td {
+    height: 38px;
+}
+
+.element-white {
+    background-color: #fff;
+    border: 0;
+}
+
+#foto {
+    cursor: pointer;
+}
+
+.titulo {
+    background-color: #1F4A7D;
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+}
+
+textarea {
+    border: 1px solid #f7f7f7;
+    margin: 2% auto;
+    resize: none;
+    background-image: -moz-linear-gradient(top, transparent 24px, transparent 48px, #E7EFF8 0px);
+    background-image: -webkit-linear-gradient(top, transparent 24px, transparent 24px, #E7EFF8 0);
+    -webkit-background-size: 100% 50px;
+    background-size: 100% 50px;
+}
+
+select {
+    border: 0 !important; /*Removes border*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-overflow: '';
+    text-indent: 0.01px; /* Removes default arrow from firefox*/
+    text-overflow: ""; /*Removes default arrow from firefox*/
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select-wrapper {
+    padding-left: 0px;
+    overflow: hidden;
+}
