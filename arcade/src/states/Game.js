@@ -25,12 +25,14 @@ export default class extends Phaser.State {
       asset: 'mushroom'
     })
 
+    this.game.physics.startSystem(Phaser.Physics.ARCADE);
+    this.game.physics.arcade.gravity.y = 200;
+
     this.game.add.existing(this.mushroom)
   }
 
   render() {
     if (__DEV__) {
-      this.game.debug.spriteInfo(this.mushroom, 32, 32)
     }
   }
 }
