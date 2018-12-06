@@ -8,15 +8,12 @@ export default class extends Phaser.Sprite {
     game.physics.arcade.enable(this)
 
     this.cursors = game.input.keyboard.createCursorKeys();
-    this.cursors.up.onDown.add(()=> this.jump());
   }
 
-
-  jump(){
-    this.body.velocity.y = -250; 
-  }
   update () {
+    
     this.body.velocity.x = 0;
+    
     if(this.cursors.left.isDown){
       this.body.velocity.x = -200;
     }
@@ -24,7 +21,11 @@ export default class extends Phaser.Sprite {
       this.body.velocity.x = 200;
     }
     if(this.cursors.down.isDown){
-      this.body.velocity.y = +40;
+      this.body.velocity.y = +200;
     }
+    if(this.cursors.up.isDown){
+      this.body.velocity.y = -200;
+    }
+
   }
 }
