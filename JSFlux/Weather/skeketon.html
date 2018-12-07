@@ -19,18 +19,18 @@
   <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
   <!-- Custom stylesheet - for your changes-->
   <link rel="stylesheet" href="css/custom.css">
-  <script src="../Source/jquery-3.3.1.js"></script>
+  <script src="../Source/jquery.js"></script>
   <script src="weather.js"></script>
 
 </head>
 
 <body>
-  <div id="weather">
+  <div class="message-block block" id="weather">
     <form name="weather-form" id="weather-form">
       Ville :<br />
       <input type="text" name="city" id="city" />
       <br /><br />
-      <input type="button" onclick="getWeather()" value="Envoyer"/>
+      <input class="message-block button" type="button" onclick="getWeather()" value="Envoyer"/>
     </form>
     <div id="weather-head">
       <br />

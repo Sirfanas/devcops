@@ -4,7 +4,7 @@ function getWeather() {
     var jsonRequest = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=146694a4bd2586a32740cd1953cc0a94";
     $.getJSON(jsonRequest,function (json) {
         parse(json);
-   });
+    });
 }
 
 /**
@@ -24,16 +24,16 @@ function parse(json) {
  * Translate the current weather in french and add a little icon next to the data. 
  */
 function treatWeather(weather) {
-    var img = "<img src=\"img\/"
+    var img = "";
     switch(weather) {
-        case "Drizzle": weather = "Bruine"; img += "rain.jpg\" />"; break;
-        case "Mist": weather = "Brouillard"; img += "mist.jpg\" />"; break;
-        case "Snow": weather = "Neige"; img += "snow.jpg\" />"; break;
-        case "Rain": weather = "Pluie"; img += "rain.jpg\" />"; break;
-        case "Clouds": weather = "Nuage"; img += "mist.jpg\" />"; break;
-        case "Haze": weather = "Brume"; img += "mist.jpg\" />"; break;
-        case "Clear": weather = "Dégagé"; img += "sun.jpg\" />"; break;
-        default: img = ""; break;
+        case "Drizzle": weather = "Bruine"; img = "<i class=\"fas fa-cloud-rain\"></i>"; break;
+        case "Mist": weather = "Brouillard"; img = "<i class=\"fas fa-cloud\"></i>"; break;
+        case "Snow": weather = "Neige"; img = "<i class=\"fas fa-snowflake\"></i>"; break;
+        case "Rain": weather = "Pluie"; img = "<i class=\"fas fa-cloud-rain\"></i>"; break;
+        case "Clouds": weather = "Nuage"; img = "<i class=\"fas fa-cloud\"></i>"; break;
+        case "Haze": weather = "Brume"; img = "<i class=\"fas fa-cloud\"></i>"; break;
+        case "Clear": weather = "Dégagé"; img = "<i class=\"fas fa-sun\"></i>"; break;
+        default: break;
     }
     $('#weather-inf-wea').html(img);
     $('#weather-inf-wea').append(weather);
