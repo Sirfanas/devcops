@@ -14,6 +14,7 @@ export default class extends Phaser.Sprite {
     this.energyMax = 200;
     this.energy = this.energyMax;
     this.energyPerJump =10;
+    this.score = 0;
 
     this.animations.add('plane', [1]);
     this.animations.add('fly', [1, 2]);
@@ -37,6 +38,8 @@ export default class extends Phaser.Sprite {
   update () {
     this.body.velocity.x = 0;
     this.angle=0;
+    this.score++;
+    console.log("score : "+this.score);
 
     if(this.cursors.left.isDown){
       this.body.velocity.x = -200;
