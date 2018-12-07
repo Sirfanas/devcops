@@ -14,7 +14,7 @@ export default class extends Phaser.Sprite {
     }
 
     update() {
-        this.y += this.SPEED;
+        this.y += this.SPEED * this.game.GLOBAL_SPEED;
 
         if(this.y >= this.game.height) {
             this.onQuitScreen(this);
