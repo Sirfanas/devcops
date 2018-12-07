@@ -64,7 +64,8 @@ export default class extends Phaser.State {
     })
 
     this.branches = new Branches({
-      game: this.game
+      game: this.game,
+      player: this.player
     });
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -76,10 +77,12 @@ export default class extends Phaser.State {
     this.game.add.existing(this.branches);
     this.game.add.existing(this.trees);
 
+
     this.game.world.bringToTop(this.trees);
   }
 
   update() {
     this.game.physics.arcade.collide(this.player, this.trees);
+    this.game.physics.arcade.collide(this.player, this.branches)
   }
 }
