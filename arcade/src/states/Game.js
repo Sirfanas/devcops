@@ -38,7 +38,7 @@ export default class extends Phaser.State {
 
     this.treeLeft = new Tree({
       game: this.game,
-      x: 0,
+      x: -125,
       y: 0,
       asset: 'tree'
     });
