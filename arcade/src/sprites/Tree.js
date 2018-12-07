@@ -9,11 +9,11 @@ export default class extends Phaser.Sprite {
         this.body.allowGravity = false;
         this.body.immovable = true;
         
-        this.SPEED = 2;
+        this.SPEED = 50;
     }
 
     update() {
-        this.y += this.SPEED;
+        this.body.velocity.y = this.SPEED;
 
         if(this.y >= this.height) {
             this.y = -this.height;

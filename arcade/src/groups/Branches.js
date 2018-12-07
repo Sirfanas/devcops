@@ -3,11 +3,11 @@ import Phaser from 'phaser';
 import Branch from '../sprites/Branch';
 
 export default class extends Phaser.Group {
-    constructor ({ game }) {
+    constructor ({ game, player, spawnPowerUp}) {
         super(game);
 
         this.SPACE_BETWEEN_BRANCHES = 300;
-        this.MAX_BRANCHES = 5;
+        this.MAX_BRANCHES = 8;
 
         for(let i = 0; i < this.MAX_BRANCHES; i++) {
             this.add(
@@ -19,7 +19,10 @@ export default class extends Phaser.Group {
                     onQuitScreen: (branch) => {
                         let yy = Math.min.apply(Math, this.children.map(function(o) { return o.y; }))
                         branch.y = yy - this.SPACE_BETWEEN_BRANCHES;
-                    }
+                        branch.reset();
+                    },
+                    player: player,
+                    spawnPowerUp: spawnPowerUp
                 })
             );
         }
