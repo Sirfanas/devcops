@@ -7,7 +7,7 @@
                 <h1 class="h5">{{ participant.nom }}</h1>
                 <p>{{ participant.prenom }}</p>
             {% else %}
-                <h1 class="h5">{{ user.username }}</h1>
+                <h1 class="h5">pa defini</h1>
                 <p>pas defini info</p>
             {% endif %}
 
@@ -15,11 +15,9 @@
     </div>
     <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
     <ul class="list-unstyled">
-        <li class="active"><a href=""> <i class="icon-home"></i>Acceuil </a></li>
+        <li class="active"><a href="{{ path('home_page') }}"> <i class="fa fa-map-marker"></i>Map de survie </a></li>
         <li><a href="{{ path('planifications_page') }}"> <i class="fa fa-calendar"></i>Planifications </a></li>
-        <li><a href="{{ path('feed_app_page') }}"> <i class="fa fa-map-marker"></i>Map de survie </a></li>
         <li><a href="{{ path('cheick_page') }}" > <i class="fa fa-sticky-note-o"></i>Controle quotidient </a></li>
-        <li><a href="{{ path('game_page') }}"> <i class="fa fa-gamepad"></i>Detente </a></li>
         <li><a href="{{ path('equipements_page') }}"> <i class="fa fa-archive"></i>Equipements </a></li>
 
 </nav>

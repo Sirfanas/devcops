@@ -127,9 +127,9 @@ class CoreController extends AbstractController
         ]);
         if ($participant !=null){
 
-            return $this->render('core/game.html.twig',['user'=>$user,'participant'=>$participant[0]]);
+            return $this->render('core/equipements.html.twig',['user'=>$user,'participant'=>$participant[0]]);
         }
-        return $this->render('core/game.html.twig',['user'=>$user]);
+        return $this->render('core/equipements.html.twig',['user'=>$user]);
 
 
     }

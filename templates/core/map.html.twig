@@ -12,4 +12,52 @@
 {% endblock %}
 
 {% block pageContent %}
+    <div class="page-content">
+
+        <div class="page-header">
+            <div class="container-fluid">
+                <h2 class="h5 no-margin-bottom">Feed The App</h2>
+            </div>
+        </div>
+
+        <!-- Modif ici ! -->
+        <div class="container-fluid ">
+            <div class="row">
+                <!-- Traffic map -->
+                <div class="col-lg-9">
+                    <div class="block map-container">
+                        <iframe id="mapid"></iframe>
+                    </div>
+                </div>
+                <!-- Weather -->
+                <div class="col-lg-3">
+                    <div class="block">
+                        <div class="message-block block" id="weather">
+                            <form name="weather-form" id="weather-form">
+                                Ville :<br />
+                                <input type="text" name="city" id="city" />
+                                <br /><br />
+                                <input class="message-block button" type="button" onclick="getWeather()" value="Envoyer"/>
+                            </form>
+                            <div id="weather-head">
+                                <br />
+                            </div>
+                            <div id="weather-inf">
+                                <p id="weather-inf-wea"></p>
+                                <p id="weather-inf-temp"></p>
+                                <p id="weather-inf-txt"></p>
+                                <p id="weather-inf-hum"></p>
+                                <p id="weather-inf-cloud"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- RSS Feed -->
+                    <div class="block">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 {% endblock %}
