@@ -270,9 +270,9 @@
                 </div>
                 <div class="col-md-5"></div>
 
-            <div class="col-md-3">
-                <a class="btn btn-danger" href="#" role="button">URGENCE VITALE</a>
-            </div>
+                <div class="col-md-3">
+                    <a class="btn btn-danger" href="#" role="button">URGENCE VITALE</a>
+                </div>
             </div>
         </div>
 
@@ -281,27 +281,49 @@
             <div class="block">
                 <!--<div class="title"><strong>Modal Form</strong></div>-->
                 <div class="block-body text-center">
-                    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Ajouter une journée</button>
+                    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Ajouter une
+                        journée
+                    </button>
                     <!-- Modal-->
-                    <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                    <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+                         class="modal fade text-left">
                         <div role="document" class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">Signin Modal</strong>
-                                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                                <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">BILAN DE
+                                    SANTE</strong>
+                                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                            aria-hidden="true">×</span></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Sélectionner please.</p>
                                     <form>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" placeholder="Email Address" class="form-control">
+                                        <div class="i-checks">
+                                            <input id="radioCustom1" type="radio" value="option1" name="a"
+                                                   class="radio-template">
+                                            <label for="radioCustom1">Medicale</label>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" placeholder="Password" class="form-control">
+                                        <div class="i-checks">
+                                            <input id="radioCustom2" type="radio" value="option1" name="a"
+                                                   class="radio-template">
+                                            <label for="radioCustom2">Mentale</label>
                                         </div>
+                                        <div class="i-checks">
+                                            <input id="radioCustom3" type="radio" value="option1" name="a"
+                                                   class="radio-template">
+                                            <label for="radioCustom3">Alimentaire</label>
+                                        </div><br/>
+
+                                        <p>Niveau intensité douleur</p><br/>
+
+                                        <select multiple="" class="form-control">
+                                            <option>Petite douleur (1)</option>
+                                            <option>Moyen moins (2)</option>
+                                            <option>Moyen plus (3)</option>
+                                            <option>Forte douleur (4)</option>
+                                        </select><br/>
+
                                         <div class="form-group">
-                                            <input type="submit" value="Signin" class="btn btn-primary">
+                                            <input type="submit" value="Valider" class="btn btn-primary">
                                         </div>
                                     </form>
                                 </div>
@@ -352,7 +374,7 @@
                             <th scope="row">3</th>
                             <td>Larry</td>
                             <td>the Bird</td>
-                            <td>@twitter       </td>
+                            <td>@twitter</td>
                         </tr>
                         </tbody>
                     </table>
@@ -361,8 +383,6 @@
         </div>
 
     </div>
-
-
 
 
 </div>
