@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+    <!-- feed-the-app.css -->
+    <link rel="stylesheet" href="css/feed-the-app.css">
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
@@ -270,11 +272,11 @@
         </div>
 
         <!-- Modif ici ! -->
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="block">
-                        <!-- Gros block -->
+                    <div class="block map-container">
+                        <iframe id="mapid"></iframe>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -303,6 +305,7 @@
 </footer>
 
 <!-- JavaScript files-->
+<script src="js/feed-the-app.js"></script>
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/popper.js/umd/popper.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
