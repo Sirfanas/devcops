@@ -18,8 +18,10 @@ export default class extends Phaser.State {
         this.gameOverText = this.game.add.text(0, 0, "Game Over", this.titleStyle);
         this.gameOverText.setTextBounds(0, 100, this.game.width, 100);
 
-        this.scoreText = this.game.add.text(0, 0, "Score : 9999", this.scoreStyle);
+        this.scoreText = this.game.add.text(0, 0, "Score : " + Math.floor(this.game.SCORE), this.scoreStyle);
         this.scoreText.setTextBounds(0, 200, this.game.width, 100);
+    
+        this.game.SCORE = 0;
     }
 
     update() {

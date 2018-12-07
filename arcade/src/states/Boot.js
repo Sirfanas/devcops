@@ -10,6 +10,8 @@ export default class extends Phaser.State {
   }
 
   preload() {
+    this.game.SCORE = 0;
+    
     if (config.webfonts.length) {
       WebFont.load({
         google: {

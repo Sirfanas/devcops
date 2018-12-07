@@ -82,9 +82,22 @@ export default class extends Phaser.State {
     this.game.world.bringToTop(this.trees);
 
     this.game.GLOBAL_SPEED=1;
+
+    this.textStyle = { font: "bold 32px Arial", fill: "#000", boundsAlignV: "middle" };
+
+    this.scoreText = this.game.add.text(0, 0, "Score : " + Math.floor(this.game.SCORE), this.textStyle);
+    this.scoreText.setTextBounds(60, 0, 300, 100);
+
+    this.energyText = this.game.add.text(0, 0, "Energy : " + this.player.energy + " / " + this.player.energyMax, this.textStyle);
+    this.energyText.setTextBounds(60, 50, 300, 100);
   }
 
   update() {
+    this.game.SCORE += 0.01;
+
+    this.scoreText.text = "Score : " + Math.floor(this.game.SCORE);
+    this.energyText.text = "Energy : " + this.player.energy + " / " + this.player.energyMax;
+
     this.game.physics.arcade.collide(this.player, this.trees);
     this.game.physics.arcade.collide(this.player, this.branches)
 
