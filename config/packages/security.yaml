@@ -19,6 +19,9 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
+
+            logout:       true
+
             anonymous: true
 
             # activate different ways to authenticate
@@ -37,3 +40,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - {path: ^/ , role: ROLE_USER}

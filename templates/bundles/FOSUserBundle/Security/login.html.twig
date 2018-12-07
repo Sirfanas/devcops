@@ -1,4 +1,4 @@
-{% extends '@!FOSUser/Security/login.html.twig' %}
+{% extends 'bundles/FOSUserBundle/layout.html.twig' %}
 
 {% block fos_user_content %}
     <div class="login-page">
@@ -10,7 +10,7 @@
                         <div class="info d-flex align-items-center">
                             <div class="content">
                                 <div class="logo">
-                                    <h1>NOM DE L'APPLICATION</h1>
+                                    <h1>ROAD TO NAMIB</h1>
                                 </div>
                                 <p>Application survivaliste</p>
                             </div>
@@ -20,18 +20,12 @@
                     <div class="col-lg-6 bg-white">
                         <div class="form d-flex align-items-center">
                             <div class="content">
-                                <form method="get" class="form-validate">
-                                    <div class="form-group">
-                                        <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" class="input-material">
-                                        <label for="login-username" class="label-material">Nom d'utilisateur</label>
-                                    </div>
-                                    <div class="form-group">
-                                        <input id="login-password" type="password" name="loginPassword" required data-msg="Please enter your password" class="input-material">
-                                        <label for="login-password" class="label-material">Mot de passe</label>
-                                    </div><a id="login" href="index.html" class="btn btn-primary">Login</a>
-                                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
-                                </form><a href="#" class="forgot-pass">Mot de passe oublié?</a><br><small>Pas encore inscrit? </small><a href="register.html" class="signup">S'inscrire</a>
+                                {% include 'bundles/FOSUserBundle/Security/login_content.html.twig' %}
+                                <a href="#" class="forgot-pass">Mot de passe oublié?</a><br>
+                                <small>Pas encore inscrit?</small>
+                                <a href="{{ path('fos_user_registration_register') }}" class="signup">S'inscrire</a>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -42,12 +36,5 @@
             <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
         </div>
     </div>
-    <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="js/front.js"></script>
+
 {% endblock %}
