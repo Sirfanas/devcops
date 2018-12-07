@@ -5,6 +5,7 @@ import lang from '../lang'
 
 import PowerUp from '../sprites/PowerUp';
 import Tree from '../sprites/Tree';
+import Branches from '../groups/Branches';
 
 export default class extends Phaser.State {
   init() { }
@@ -62,12 +63,20 @@ export default class extends Phaser.State {
       player:this.player
     })
 
+    this.branches = new Branches({
+      game: this.game
+    });
+
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 200;
+    this.game.physics.arcade.enable(this.powerUp1);
     
     this.game.add.existing(this.player);
-    this.game.physics.arcade.enable(this.powerUp1);
+    this.game.add.existing(this.powerUp1);
+    this.game.add.existing(this.branches);
     this.game.add.existing(this.trees);
+
+    this.game.world.bringToTop(this.trees);
   }
 
   update() {
