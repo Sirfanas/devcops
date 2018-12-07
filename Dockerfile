@@ -7,6 +7,7 @@ RUN git clone https://github.com/Sirfanas/devcops.git /opt/devcops\
 	&& echo "DATABASE_URL=mysql://root:root@localhost:3306/devCopsDb" >> /opt/devcops/.env \
 	&& echo "MAILER_URL=null://localhost" >> /opt/devcops/.env \
 	&& composer require symfony/requirements-checker \
+	&& composer require symfony/apache-pack \
 	&& composer install \
 	&& /opt/start_service_road_to_namib.sh \
 	&& mysql -e "CREATE DATABASE devCopsDb;" \
