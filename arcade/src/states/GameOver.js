@@ -10,7 +10,7 @@ export default class extends Phaser.State {
     create() {
         this.game.stage.backgroundColor = '#182d3b';
 
-        this.button = this.game.add.button(this.game.world.centerX - 95, 400, 'button', this.actionOnClick, this, 2, 1, 0);
+        this.button = this.game.add.button(this.game.world.centerX - 150, 400, 'button', this.actionOnClick, this, 2, 1, 0);
 
         this.titleStyle = { font: "bold 64px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
         this.scoreStyle = { font: "bold 32px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };

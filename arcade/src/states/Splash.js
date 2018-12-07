@@ -16,7 +16,7 @@ export default class extends Phaser.State {
     this.load.image('mushroom', 'assets/images/mushroom2.png')
     this.load.image('tree', 'assets/images/Tronc.png');
     this.load.image('branch', 'assets/images/Branche.png');
-    this.load.spritesheet('button', 'assets/images/button_sprite_sheet.png', 193, 71);
+    this.load.spritesheet('button', 'assets/images/buttons.png', 300, 100);
     this.load.spritesheet('vipi', 'assets/images/Vipi.png', 261, 194, 3);
   }
 
