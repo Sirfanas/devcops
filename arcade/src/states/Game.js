@@ -9,7 +9,7 @@ import Branches from '../groups/Branches';
 
 export default class extends Phaser.State {
   init() { }
-  preload() { 
+  preload() {
   }
 
   create() {
