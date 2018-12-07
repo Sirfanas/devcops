@@ -79,10 +79,16 @@ export default class extends Phaser.State {
 
 
     this.game.world.bringToTop(this.trees);
+
+    this.game.GLOBAL_SPEED=1;
   }
 
   update() {
     this.game.physics.arcade.collide(this.player, this.trees);
     this.game.physics.arcade.collide(this.player, this.branches)
+
+    if(this.game.GLOBAL_SPEED <= 7){
+      this.game.GLOBAL_SPEED+=0.001;
+    }
   }
 }
