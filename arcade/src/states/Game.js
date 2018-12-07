@@ -2,7 +2,8 @@
 import Phaser from 'phaser'
 import Player from '../sprites/Player'
 import lang from '../lang'
-import Tree from '../sprites/Tree';
+
+import PowerUp from '../sprites/PowerUp';
 
 export default class extends Phaser.State {
   init() { }
@@ -22,6 +23,9 @@ export default class extends Phaser.State {
     banner.padding.set(10, 16)
     banner.anchor.setTo(0.5)
 
+    
+  
+
     this.player = new Player({
       game: this.game,
       x: this.world.centerX,
@@ -29,34 +33,24 @@ export default class extends Phaser.State {
       asset: 'vipi'
     });
 
-    this.treeRight = new Tree({
+    this.powerUp1 = new PowerUp({
       game: this.game,
-      x: 1280 - 50,
-      y: 0,
-      asset: 'tree'
-    });
-
-    this.treeLeft = new Tree({
-      game: this.game,
-      x: -125,
-      y: 0,
-      asset: 'tree'
-    });
+      x: 500,
+      y: 250,
+      asset: 'mushroom',
+      player:this.player
+    })
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 200;
     
     this.game.add.existing(this.player);
-    this.game.add.existing(this.treeRight);
-    this.game.add.existing(this.treeLeft);
-  }
 
-  update() {
-    console.log("update");
-    this.game.physics.arcade.collide(this.player, this.treeRight);
-    this.game.physics.arcade.collide(this.player, this.treeLeft);
-  }
+    this.game.physics.arcade.enable(this.powerUp1);
+    
 
+
+  }
   render() {
     if (__DEV__) {
     }
