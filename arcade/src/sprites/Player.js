@@ -35,6 +35,10 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
+    if(this.y > this.game.height) {
+      this.game.state.start('GameOver')
+      return;
+    }
     this.body.velocity.x = 0;
     this.angle=0;
 

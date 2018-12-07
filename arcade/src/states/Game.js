@@ -13,6 +13,7 @@ export default class extends Phaser.State {
   }
 
   create() {
+    this.game.stage.backgroundColor = '#fff';
     this.trees = new Phaser.Group(this.game);
     for(let i = 0; i < 2; i++) {
       this.trees.add(
@@ -59,7 +60,6 @@ export default class extends Phaser.State {
       game: this.game,
       player: this.player,
       spawnPowerUp: (branch, x, y) => {
-        console.log("spawning branch");
         this.game.add.existing(new PowerUp({
           game: this.game,
           x: x,
