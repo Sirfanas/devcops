@@ -7,6 +7,7 @@ export default class extends Phaser.Sprite {
     this.anchor.setTo(0.5)
 
     game.physics.arcade.enable(this)
+    this.body.setSize(50, 100, 105, 70);
     
     this.cursors = game.input.keyboard.createCursorKeys();
     this.cursors.up.onDown.add(()=> this.jump());

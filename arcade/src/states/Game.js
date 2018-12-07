@@ -2,6 +2,7 @@
 import Phaser from 'phaser'
 import Player from '../sprites/Player'
 import lang from '../lang'
+import Tree from '../sprites/Tree';
 
 export default class extends Phaser.State {
   init() { }
@@ -26,13 +27,34 @@ export default class extends Phaser.State {
       x: this.world.centerX,
       y: this.world.centerY,
       asset: 'vipi'
-    })
+    });
+
+    this.treeRight = new Tree({
+      game: this.game,
+      x: 1280 - 50,
+      y: 0,
+      asset: 'tree'
+    });
+
+    this.treeLeft = new Tree({
+      game: this.game,
+      x: 0,
+      y: 0,
+      asset: 'tree'
+    });
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 200;
-
+    
     this.game.add.existing(this.player);
-    this.player.body.collideWorldBounds = true;
+    this.game.add.existing(this.treeRight);
+    this.game.add.existing(this.treeLeft);
+  }
+
+  update() {
+    console.log("update");
+    this.game.physics.arcade.collide(this.player, this.treeRight);
+    this.game.physics.arcade.collide(this.player, this.treeLeft);
   }
 
   render() {
