@@ -55,25 +55,26 @@ export default class extends Phaser.State {
       asset: 'vipi'
     });
 
-    this.powerUp1 = new PowerUp({
-      game: this.game,
-      x: 500,
-      y: 250,
-      asset: 'mushroom',
-      player:this.player
-    })
-
     this.branches = new Branches({
       game: this.game,
-      player: this.player
+      player: this.player,
+      spawnPowerUp: (branch, x, y) => {
+        console.log("spawning branch");
+        this.game.add.existing(new PowerUp({
+          game: this.game,
+          x: x,
+          y: y,
+          asset: 'mushroom',
+          player: this.player,
+          branch: branch
+        }))
+      }
     });
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 200;
-    this.game.physics.arcade.enable(this.powerUp1);
     
     this.game.add.existing(this.player);
-    this.game.add.existing(this.powerUp1);
     this.game.add.existing(this.branches);
     this.game.add.existing(this.trees);
 
