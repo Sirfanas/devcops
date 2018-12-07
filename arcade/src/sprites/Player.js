@@ -23,7 +23,7 @@ export default class extends Phaser.Sprite {
 
 
   jump(){
-    if(this.energy>this.energyPerJump){
+    if(this.energy - this.energyPerJump >= 0){
       this.body.velocity.y = -250;
       this.energy -= this.energyPerJump;
     }

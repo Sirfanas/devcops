@@ -13,7 +13,7 @@ export default class extends Phaser.State {
   }
 
   create() {
-    this.game.stage.backgroundColor = '#fff';
+    this.game.stage.backgroundColor = '#9ecae5';
     this.trees = new Phaser.Group(this.game);
     for(let i = 0; i < 2; i++) {
       this.trees.add(
