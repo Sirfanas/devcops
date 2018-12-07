@@ -22,6 +22,41 @@ export default class extends Phaser.State {
     banner.padding.set(10, 16)
     banner.anchor.setTo(0.5)
 
+    this.trees = new Phaser.Group(this.game);
+    for(let i = 0; i < 2; i++) {
+      this.trees.add(
+        new Tree({
+          game: this.game,
+          x: 1280 - 50,
+          y: 0,
+          asset: 'tree'
+        }));
+
+      this.trees.add(
+        new Tree({
+          game: this.game,
+          x: -125,
+          y: 0,
+          asset: 'tree'
+        }));
+
+        this.trees.add(
+          new Tree({
+            game: this.game,
+            x: 1280 - 50,
+            y: -900,
+            asset: 'tree'
+          }));
+  
+        this.trees.add(
+          new Tree({
+            game: this.game,
+            x: -125,
+            y: -900,
+            asset: 'tree'
+          }));
+    }
+    
     this.player = new Player({
       game: this.game,
       x: this.world.centerX,
@@ -29,32 +64,15 @@ export default class extends Phaser.State {
       asset: 'vipi'
     });
 
-    this.treeRight = new Tree({
-      game: this.game,
-      x: 1280 - 50,
-      y: 0,
-      asset: 'tree'
-    });
-
-    this.treeLeft = new Tree({
-      game: this.game,
-      x: -125,
-      y: 0,
-      asset: 'tree'
-    });
-
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 200;
     
     this.game.add.existing(this.player);
-    this.game.add.existing(this.treeRight);
-    this.game.add.existing(this.treeLeft);
+    this.game.add.existing(this.trees);
   }
 
   update() {
-    console.log("update");
-    this.game.physics.arcade.collide(this.player, this.treeRight);
-    this.game.physics.arcade.collide(this.player, this.treeLeft);
+    this.game.physics.arcade.collide(this.player, this.trees);
   }
 
   render() {

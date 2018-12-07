@@ -40,6 +40,8 @@ export default class extends Phaser.Sprite {
     if(this.cursors.down.isDown){
       this.animations.play('plane');
       this.body.velocity.y = +40;
+
+     // this.angle = (-20 + Math.random() * 40);
     } else {
       this.animations.play('fly');
     }
