@@ -28,19 +28,11 @@ export default class extends Phaser.State {
       asset: 'vipi'
     })
 
-<<<<<<< Updated upstream
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 200;
 
     this.game.add.existing(this.player);
-
-=======
-    this.game.add.existing(this.mushroom)
-    this.mushroom.body.collideWorldBounds = true;
->>>>>>> Stashed changes
-    this.game.physics.startSystem(Phaser.Physics.ARCADE);
-    this.game.physics.arcade.gravity.y=200;
-
+    this.player.body.collideWorldBounds = true;
   }
 
   render() {

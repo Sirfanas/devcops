@@ -26,11 +26,15 @@ export default class extends Phaser.Sprite {
 
   update () {
     this.body.velocity.x = 0;
+    this.angle=0;
+
     if(this.cursors.left.isDown){
       this.body.velocity.x = -200;
+      this.angle= -10;
     }
     if(this.cursors.right.isDown){
       this.body.velocity.x = 200;
+      this.angle=  10;
     }
     if(this.cursors.down.isDown){
       this.animations.play('plane');
